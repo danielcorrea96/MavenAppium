@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Stories</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/all.css">
+<link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/v4-shims.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.css">
+<link rel="stylesheet" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Bootstrap treeview","type":"story","href":"2330fd080fb9d5f3e9c4e2e3ffb51c364ce2245fce46e674f56b3ef4fd2e4b7f.html","nodes":[],"selectable":false,"tags":["",""]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">Prueba de Serenity Screenplay Android</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                > <span class="truncate-40">Bootstrap Treeview</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="fa fa-comments-o"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Stories</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated </span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+                <div class=row">
+                    <div class="col-sm-12">
+                        <div>
+                            <div clas="table">
+                                <div class="row">
+                                    <div class="col-sm-8">
+                          <span>
+                                <h2><i class="fa fa-book"></i> Story:  Bootstrap Treeview</h2>
+                            </span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                <hr />
+<p><img src="https://img.shields.io/bower/v/bootstrap-treeview.svg?style=flat" alt="Bower version" /><br />
+<a href="https://www.npmjs.com/package/bootstrap-treeview"><img src="https://img.shields.io/npm/v/bootstrap-treeview.svg?style=flat" alt="npm version" /></a><br />
+<a href="https://travis-ci.org/jonmiles/bootstrap-treeview"><img src="https://img.shields.io/travis/jonmiles/bootstrap-treeview/master.svg?style=flat" alt="Build Status" /></a></p>
+<p>A simple and elegant solution to displaying hierarchical tree structures (i.e. a Tree View) while leveraging the best that Twitter Bootstrap has to offer.</p>
+<p><img src="https://raw.github.com/jonmiles/bootstrap-treeview/master/screenshot/default.PNG" alt="Bootstrap Tree View Default" /></p>
+<p>Where provided these are the actual versions bootstrap-treeview has been tested against.</p>
+<ul>
+<li><a href="http://getbootstrap.com/">Bootstrap v3.3.4 (&gt;= 3.0.0)</a></li>
+<li><a href="http://jquery.com/">jQuery v2.1.3 (&gt;= 1.9.0)</a></li>
+</ul>
+<p>You can install using bower (recommended):</p>
+<pre><code class="language-javascript">$ bower install bootstrap-treeview  
+</code></pre>
+<p>or using npm:</p>
+<pre><code class="language-javascript">$ npm install bootstrap-treeview  
+</code></pre>
+<p>or <a href="https://github.com/jonmiles/bootstrap-treeview/releases/tag/v1.2.0">download</a> manually.</p>
+<p>Add the following resources for the bootstrap-treeview to function correctly.</p>
+<pre><code class="language-html">&lt;!-- Required Stylesheets --&gt;  
+&lt;link href=&quot;bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;  
+  
+&lt;!-- Required Javascript --&gt;  
+&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;  
+&lt;script src=&quot;bootstrap-treeview.js&quot;&gt;&lt;/script&gt;  
+</code></pre>
+<p>The component will bind to any existing DOM element.</p>
+<pre><code class="language-html">&lt;div id=&quot;tree&quot;&gt;&lt;/div&gt;  
+</code></pre>
+<p>Basic usage may look something like this.</p>
+<pre><code class="language-javascript">function getTree() {  
+// Some logic to retrieve, or generate tree structure  
+return data;  
+}  
+  
+$('#tree').treeview({data: getTree()});  
+</code></pre>
+<p>In order to define the hierarchical structure needed for the tree it's necessary to provide a nested array of JavaScript objects.</p>
+<p>Example</p>
+<pre><code class="language-javascript">var tree = [  
+{  
+text: &quot;Parent 1&quot;,  
+nodes: [  
+{  
+text: &quot;Child 1&quot;,  
+nodes: [  
+{  
+text: &quot;Grandchild 1&quot;  
+},  
+{  
+text: &quot;Grandchild 2&quot;  
+}  
+]  
+},  
+{  
+text: &quot;Child 2&quot;  
+}  
+]  
+},  
+{  
+text: &quot;Parent 2&quot;  
+},  
+{  
+text: &quot;Parent 3&quot;  
+},  
+{  
+text: &quot;Parent 4&quot;  
+},  
+{  
+text: &quot;Parent 5&quot;  
+}  
+];  
+</code></pre>
+<p>At the lowest level a tree node is a represented as a simple JavaScript object.  This one required property <code>text</code> will build you a tree.</p>
+<pre><code class="language-javascript">{  
+text: &quot;Node 1&quot;  
+}  
+</code></pre>
+<p>If you want to do more, here's the full node specification</p>
+<pre><code class="language-javascript">{  
+text: &quot;Node 1&quot;,  
+icon: &quot;glyphicon glyphicon-stop&quot;,  
+selectedIcon: &quot;glyphicon glyphicon-stop&quot;,  
+color: &quot;#000000&quot;,  
+backColor: &quot;#FFFFFF&quot;,  
+href: &quot;#node-1&quot;,  
+selectable: true,  
+state: {  
+checked: true,  
+disabled: true,  
+expanded: true,  
+selected: true  
+},  
+tags: ['available'],  
+nodes: [  
+{},  
+...  
+]  
+}  
+</code></pre>
+<p>The following properties are defined to allow node level overrides, such as node specific icons, colours and tags.</p>
+<p><code>String</code> <code>Mandatory</code></p>
+<p>The text value displayed for a given tree node, typically to the right of the nodes icon.</p>
+<p><code>String</code> <code>Optional</code></p>
+<p>The icon displayed on a given node, typically to the left of the text.</p>
+<p>For simplicity we directly leverage <a href="http://getbootstrap.com/components/#glyphicons">Bootstraps Glyphicons support</a> and as such you should provide both the base class and individual icon class separated by a space.</p>
+<p>By providing the base class you retain full control over the icons used.  If you want to use your own then just add your class to this icon field.</p>
+<p><code>String</code> <code>Optional</code></p>
+<p>The icon displayed on a given node when selected, typically to the left of the text.</p>
+<p><code>String</code> <code>Optional</code></p>
+<p>The foreground color used on a given node, overrides global color option.</p>
+<p><code>String</code> <code>Optional</code></p>
+<p>The background color used on a given node, overrides global color option.</p>
+<p><code>String</code> <code>Optional</code></p>
+<p>Used in conjunction with global enableLinks option to specify anchor tag URL on a given node.</p>
+<p><code>Boolean</code> <code>Default: true</code></p>
+<p>Whether or not a node is selectable in the tree. False indicates the node should act as an expansion heading and will not fire selection events.</p>
+<p><code>Object</code> <code>Optional</code><br />
+Describes a node's initial state.</p>
+<p><code>Boolean</code> <code>Default: false</code></p>
+<p>Whether or not a node is checked, represented by a checkbox style glyphicon.</p>
+<p><code>Boolean</code> <code>Default: false</code></p>
+<p>Whether or not a node is disabled (not selectable, expandable or checkable).</p>
+<p><code>Boolean</code> <code>Default: false</code></p>
+<p>Whether or not a node is expanded i.e. open.  Takes precedence over global option levels.</p>
+<p><code>Boolean</code> <code>Default: false</code></p>
+<p>Whether or not a node is selected.</p>
+<p><code>Array of Strings</code>  <code>Optional</code></p>
+<p>Used in conjunction with global showTags option to add additional information to the right of each node; using <a href="http://getbootstrap.com/components/#badges">Bootstrap Badges</a></p>
+<p>You can extend the node object by adding any number of additional key value pairs that you require for your application.  Remember this is the object which will be passed around during selection events.</p>
+<p>Options allow you to customise the treeview's default appearance and behaviour.  They are passed to the plugin on initialization, as an object.</p>
+<pre><code class="language-javascript">// Example: initializing the treeview  
+// expanded to 5 levels  
+// with a background color of green  
+$('#tree').treeview({  
+data: data,         // data is not optional  
+levels: 5,  
+backColor: 'green'  
+});  
+</code></pre>
+<p>You can pass a new options object to the treeview at any time but this will have the effect of re-initializing the treeview.</p>
+<p>The following is a list of all available options.</p>
+<p>Array of Objects.  No default, expects data</p>
+<p>This is the core data to be displayed by the tree view.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: inherits from Bootstrap.css.</p>
+<p>Sets the default background color used by all nodes, except when overridden on a per node basis in data.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: inherits from Bootstrap.css.</p>
+<p>Sets the border color for the component; set showBorder to false if you don't want a visible border.</p>
+<p>String, class names(s).  Default: &quot;glyphicon glyphicon-check&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the icon to be as a checked checkbox, used in conjunction with showCheckbox.</p>
+<p>String, class name(s).  Default: &quot;glyphicon glyphicon-minus&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the icon to be used on a collapsible tree node.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: inherits from Bootstrap.css.</p>
+<p>Sets the default foreground color used by all nodes, except when overridden on a per node basis in data.</p>
+<p>String, class name(s).  Default: &quot;glyphicon&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the icon to be used on a tree node with no child nodes.</p>
+<p>Boolean.  Default: false</p>
+<p>Whether or not to present node text as a hyperlink.  The href value of which must be provided in the data structure on a per node basis.</p>
+<p>String, class name(s).  Default: &quot;glyphicon glyphicon-plus&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the icon to be used on an expandable tree node.</p>
+<p>Boolean.  Default: true</p>
+<p>Whether or not to highlight search results.</p>
+<p>Boolean.  Default: true</p>
+<p>Whether or not to highlight the selected node.</p>
+<p>Integer. Default: 2</p>
+<p>Sets the number of hierarchical levels deep the tree will be expanded to by default.</p>
+<p>Boolean.  Default: false</p>
+<p>Whether or not multiple nodes can be selected at the same time.</p>
+<p>String, class name(s).  Default: &quot;glyphicon glyphicon-stop&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the default icon to be used on all nodes, except when overridden on a per node basis in data.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: '#F5F5F5'.</p>
+<p>Sets the default background color activated when the users cursor hovers over a node.</p>
+<p>String, class name(s).  Default: &quot;glyphicon glyphicon-stop&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the default icon to be used on all selected nodes, except when overridden on a per node basis in data.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: undefined, inherits.</p>
+<p>Sets the background color of the selected node.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: '#D9534F'.</p>
+<p>Sets the foreground color of the selected node.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: '#428bca'.</p>
+<p>Sets the background color of the selected node.</p>
+<p>String, <a href="http://www.w3schools.com/cssref/css_colors_legal.asp">any legal color value</a>.  Default: '#FFFFFF'.</p>
+<p>Sets the foreground color of the selected node.</p>
+<p>Boolean.  Default: true</p>
+<p>Whether or not to display a border around nodes.</p>
+<p>Boolean.  Default: false</p>
+<p>Whether or not to display checkboxes on nodes.</p>
+<p>Boolean.  Default: true</p>
+<p>Whether or not to display a nodes icon.</p>
+<p>Boolean.  Default: false</p>
+<p>Whether or not to display tags to the right of each node.  The values of which must be provided in the data structure on a per node basis.</p>
+<p>String, class names(s).  Default: &quot;glyphicon glyphicon-unchecked&quot; as defined by <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a></p>
+<p>Sets the icon to be as an unchecked checkbox, used in conjunction with showCheckbox.</p>
+<p>Methods provide a way of interacting with the plugin programmatically.  For example, expanding a node is possible via the expandNode method.</p>
+<p>You can invoke methods in one of two ways, using either:</p>
+<p>The plugin's wrapper works as a proxy for accessing the underlying methods.</p>
+<pre><code class="language-javascript">$('#tree').treeview('methodName', args)  
+</code></pre>
+<blockquote>
+<p>Limitation, multiple arguments must be passed as an array of arguments.</p>
+</blockquote>
+<p>You can get an instance of the treeview using one of the two following methods.</p>
+<pre><code class="language-javascript">// This special method returns an instance of the treeview.  
+$('#tree').treeview(true)  
+.methodName(args);  
+  
+// The instance is also saved in the DOM elements data,  
+// and accessible using the plugin's id 'treeview'.  
+$('#tree').data('treeview')  
+.methodName(args);  
+</code></pre>
+<blockquote>
+<p>A better approach, if you plan a lot of interaction.</p>
+</blockquote>
+<p>The following is a list of all available methods.</p>
+<p>Checks all tree nodes</p>
+<pre><code class="language-javascript">$('#tree').treeview('checkAll', { silent: true });  
+</code></pre>
+<p>Triggers <code>nodeChecked</code> event; pass silent to suppress events.</p>
+<p>Checks a given tree node, accepts node or nodeId.</p>
+<pre><code class="language-javascript">$('#tree').treeview('checkNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeChecked</code> event; pass silent to suppress events.</p>
+<p>Clear the tree view of any previous search results e.g. remove their highlighted state.</p>
+<pre><code class="language-javascript">$('#tree').treeview('clearSearch');  
+</code></pre>
+<p>Triggers <code>searchCleared</code> event</p>
+<p>Collapse all tree nodes, collapsing the entire tree.</p>
+<pre><code class="language-javascript">$('#tree').treeview('collapseAll', { silent: true });  
+</code></pre>
+<p>Triggers <code>nodeCollapsed</code> event; pass silent to suppress events.</p>
+<p>Collapse a given tree node and it's child nodes.  If you don't want to collapse the child nodes, pass option <code>{ ignoreChildren: true }</code>.</p>
+<pre><code class="language-javascript">$('#tree').treeview('collapseNode', [ nodeId, { silent: true, ignoreChildren: false } ]);  
+</code></pre>
+<p>Triggers <code>nodeCollapsed</code> event; pass silent to suppress events.</p>
+<p>Disable all tree nodes</p>
+<pre><code class="language-javascript">$('#tree').treeview('disableAll', { silent: true });  
+</code></pre>
+<p>Triggers <code>nodeDisabled</code> event; pass silent to suppress events.</p>
+<p>Disable a given tree node, accepts node or nodeId.</p>
+<pre><code class="language-javascript">$('#tree').treeview('disableNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeDisabled</code> event; pass silent to suppress events.</p>
+<p>Enable all tree nodes</p>
+<pre><code class="language-javascript">$('#tree').treeview('enableAll', { silent: true });  
+</code></pre>
+<p>Triggers <code>nodeEnabled</code> event; pass silent to suppress events.</p>
+<p>Enable a given tree node, accepts node or nodeId.</p>
+<pre><code class="language-javascript">$('#tree').treeview('enableNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeEnabled</code> event; pass silent to suppress events.</p>
+<p>Expand all tree nodes.  Optionally can be expanded to any given number of levels.</p>
+<pre><code class="language-javascript">$('#tree').treeview('expandAll', { levels: 2, silent: true });  
+</code></pre>
+<p>Triggers <code>nodeExpanded</code> event; pass silent to suppress events.</p>
+<p>Expand a given tree node, accepts node or nodeId.  Optionally can be expanded to any given number of levels.</p>
+<pre><code class="language-javascript">$('#tree').treeview('expandNode', [ nodeId, { levels: 2, silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeExpanded</code> event; pass silent to suppress events.</p>
+<p>Returns an array of collapsed nodes e.g. state.expanded = false.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getCollapsed', nodeId);  
+</code></pre>
+<p>Returns an array of disabled nodes e.g. state.disabled = true.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getDisabled', nodeId);  
+</code></pre>
+<p>Returns an array of enabled nodes e.g. state.disabled = false.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getEnabled', nodeId);  
+</code></pre>
+<p>Returns an array of expanded nodes e.g. state.expanded = true.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getExpanded', nodeId);  
+</code></pre>
+<p>Returns a single node object that matches the given node id.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getNode', nodeId);  
+</code></pre>
+<p>Returns the parent node of a given node, if valid otherwise returns undefined.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getParent', node);  
+</code></pre>
+<p>Returns an array of selected nodes e.g. state.selected = true.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getSelected', nodeId);  
+</code></pre>
+<p>Returns an array of sibling nodes for a given node, if valid otherwise returns undefined.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getSiblings', node);  
+</code></pre>
+<p>Returns an array of unselected nodes e.g. state.selected = false.</p>
+<pre><code class="language-javascript">$('#tree').treeview('getUnselected', nodeId);  
+</code></pre>
+<p>Removes the tree view component. Removing attached events, internal attached objects, and added HTML elements.</p>
+<pre><code class="language-javascript">$('#tree').treeview('remove');  
+</code></pre>
+<p>Reveals a given tree node, expanding the tree from node to root.</p>
+<pre><code class="language-javascript">$('#tree').treeview('revealNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeExpanded</code> event; pass silent to suppress events.</p>
+<p>Searches the tree view for nodes that match a given string, highlighting them in the tree.</p>
+<p>Returns an array of matching nodes.</p>
+<pre><code class="language-javascript">$('#tree').treeview('search', [ 'Parent', {  
+ignoreCase: true,     // case insensitive  
+exactMatch: false,    // like or equals  
+revealResults: true,  // reveal matching nodes  
+}]);  
+</code></pre>
+<p>Triggers <code>searchComplete</code> event</p>
+<p>Selects a given tree node, accepts node or nodeId.</p>
+<pre><code class="language-javascript">$('#tree').treeview('selectNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeSelected</code> event; pass silent to suppress events.</p>
+<p>Toggles a nodes checked state; checking if unchecked, unchecking if checked.</p>
+<pre><code class="language-javascript">$('#tree').treeview('toggleNodeChecked', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers either <code>nodeChecked</code> or <code>nodeUnchecked</code> event; pass silent to suppress events.</p>
+<p>Toggles a nodes disabled state; disabling if enabled, enabling if disabled.</p>
+<pre><code class="language-javascript">$('#tree').treeview('toggleNodeDisabled', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers either <code>nodeDisabled</code> or <code>nodeEnabled</code> event; pass silent to suppress events.</p>
+<p>Toggles a nodes expanded state; collapsing if expanded, expanding if collapsed.</p>
+<pre><code class="language-javascript">$('#tree').treeview('toggleNodeExpanded', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers either <code>nodeExpanded</code> or <code>nodeCollapsed</code> event; pass silent to suppress events.</p>
+<p>Toggles a node selected state; selecting if unselected, unselecting if selected.</p>
+<pre><code class="language-javascript">$('#tree').treeview('toggleNodeSelected', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers either <code>nodeSelected</code> or <code>nodeUnselected</code> event; pass silent to suppress events.</p>
+<p>Uncheck all tree nodes.</p>
+<pre><code class="language-javascript">$('#tree').treeview('uncheckAll', { silent: true });  
+</code></pre>
+<p>Triggers <code>nodeUnchecked</code> event; pass silent to suppress events.</p>
+<p>Uncheck a given tree node, accepts node or nodeId.</p>
+<pre><code class="language-javascript">$('#tree').treeview('uncheckNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeUnchecked</code> event; pass silent to suppress events.</p>
+<p>Unselects a given tree node, accepts node or nodeId.</p>
+<pre><code class="language-javascript">$('#tree').treeview('unselectNode', [ nodeId, { silent: true } ]);  
+</code></pre>
+<p>Triggers <code>nodeUnselected</code> event; pass silent to suppress events.</p>
+<p>Events are provided so that your application can respond to changes in the treeview's state.  For example, if you want to update a display when a node is selected use the <code>nodeSelected</code> event.</p>
+<p>You can bind to any event defined below by either using an options callback handler, or the standard jQuery .on method.</p>
+<p>Example using options callback handler:</p>
+<pre><code class="language-javascript">$('#tree').treeview({  
+// The naming convention for callback's is to prepend with `on`  
+// and capitalize the first letter of the event name  
+// e.g. nodeSelected -&gt; onNodeSelected  
+onNodeSelected: function(event, data) {  
+// Your logic goes here  
+});  
+</code></pre>
+<p>and using jQuery .on method</p>
+<pre><code class="language-javascript">$('#tree').on('nodeSelected', function(event, data) {  
+// Your logic goes here  
+});  
+</code></pre>
+<p><code>nodeChecked (event, node)</code>  - A node is checked.</p>
+<p><code>nodeCollapsed (event, node)</code>  - A node is collapsed.</p>
+<p><code>nodeDisabled (event, node)</code>  - A node is disabled.</p>
+<p><code>nodeEnabled (event, node)</code>  - A node is enabled.</p>
+<p><code>nodeExpanded (event, node)</code> - A node is expanded.</p>
+<p><code>nodeSelected (event, node)</code>  - A node is selected.</p>
+<p><code>nodeUnchecked (event, node)</code>  - A node is unchecked.</p>
+<p><code>nodeUnselected (event, node)</code>  - A node is unselected.</p>
+<p><code>searchComplete (event, results)</code>  - After a search completes</p>
+<p><code>searchCleared (event, results)</code>  - After search results are cleared</p>
+<p>Copyright 2013 Jonathan Miles</p>
+<p>Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);<br />
+you may not use this file except in compliance with the License.<br />
+You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+<p>Unless required by applicable law or agreed to in writing, software<br />
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,<br />
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br />
+See the License for the specific language governing permissions and<br />
+limitations under the License.</p>
+
+                            </div>
+
+                    </div>
+                </div>
+
+
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <!-- Requirements result tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                        </li>
+                    </ul>
+
+                    <!-- Specifications and Results tabs -->
+                    <div class="card border">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div id="specs" class="tab-pane fade in active">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+
+                                            <h3>Scenarios</h3>
+
+                                            <div id="toc">
+                                                <table class="table" id="toc-table">
+
+                                                </table>
+
+                                            </div>
+
+                                            <h3>Scenario details</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="results" class="tab-pane fade">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+
+                                            <table class="table">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Scenarios</th>
+                                                    <th scope="col" colspan="2" class="automated-stats">
+                                                        Automated
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing
+                                                                    </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                </tr>
+                                                <tr>
+                                                                    <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                    </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                </tr>
+                                                <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                </tr>
+                                                <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                </tr>
+                                                <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-times-circle failure-icon'></i>&nbsp;Failed
+                                                                </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                        class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"> </td>
+                                                </tr>
+                                                <tr class="summary-stats">
+                                                    <td class="aggregate-result-count">Total</td>
+                                                    <td class="automated-stats">0</td>
+                                                    <td class="automated-stats"></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                            No automated tests were executed
+
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                No manual tests were recorded
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 2.0.4</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
